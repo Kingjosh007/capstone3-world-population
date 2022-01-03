@@ -2,6 +2,11 @@
   "name": "capstone3-world-population",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "King Josaphat Chewa (KJC)",
+    "email": "kingjochewa2007@gmail.com",
+    "url": "https://github.com/Kingjosh007"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
