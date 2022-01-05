@@ -1,7 +1,7 @@
-const baseUrl = 'https://api.spacexdata.com/v3';
+const baseUrl = 'https://countriesnow.space/api/v0.1/countries/population';
 
-const rocketsEndpoint = `${baseUrl}/rockets`;
-const missionsEndpoint = `${baseUrl}/missions`;
+const citiesEndpoint = `${baseUrl}/cities`;
+const citiesFilterEndpoint = `${citiesEndpoint}/filter`;
 
 const getData = async (url) => {
   const res = await fetch(url);
@@ -9,8 +9,20 @@ const getData = async (url) => {
   return dataArr;
 };
 
+const postData = async (url, data, isText = false) => {
+  const res = await fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    headers: { 'Content-type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  if (isText) return res.text();
+  return res.json();
+};
+
 export {
-  rocketsEndpoint,
-  missionsEndpoint,
+  citiesEndpoint,
+  citiesFilterEndpoint,
   getData,
+  postData,
 };
