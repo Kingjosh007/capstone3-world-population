@@ -7,7 +7,7 @@ const Topbar = (props) => {
   const { title } = props;
 
   return (
-    <nav className="topBar primary4">
+    <nav className="topbar primary4">
       <div>
         <NavLink to="/" className="text1">
           <FaAngleLeft />
@@ -16,7 +16,7 @@ const Topbar = (props) => {
       <div>
         <h5 className="text2">{title}</h5>
       </div>
-      <div className="iconsRight">
+      <div className="icons-right">
         <FaMicrophone className="text1" />
         <FaCog className="text1" />
       </div>

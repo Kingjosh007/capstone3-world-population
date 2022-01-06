@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import Navbar from './Navbar';
+import Topbar from './Topbar';
 import MyProfile from './pages/MyProfile';
 import RocketPage from './pages/RocketPage';
 import MissionPage from './pages/MissionPage';
 import NotMatch from './pages/NotMatch';
 import { getRockets } from '../redux/rocket/rocket';
 
-const SpaceContainer = () => {
+const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRockets());
@@ -17,10 +17,9 @@ const SpaceContainer = () => {
   const rockets = useSelector((state) => state.rocketReducer.rockets);
   const bookedRockets = useSelector((state) => state.rocketReducer.bookedRockets);
 
-  console.log(rockets);
   return (
     <div>
-      <Navbar />
+      <Topbar />
       <Routes>
         <Route path="/Myprofile" element={<MyProfile />} />
         <Route path="/" element={<RocketPage rockets={rockets} bookedRockets={bookedRockets} />} exact />
