@@ -3,6 +3,8 @@ const baseUrl = 'https://countriesnow.space/api/v0.1/countries/population';
 const citiesEndpoint = `${baseUrl}/cities`;
 const citiesFilterEndpoint = `${citiesEndpoint}/filter`;
 
+const flagsEndpoint = 'https://countriesnow.space/api/v0.1/countries/flag/images';
+
 const getData = async (url) => {
   const res = await fetch(url);
   const dataArr = await res.json() || [];
@@ -23,6 +25,7 @@ const postData = async (url, data, isText = false) => {
 export {
   citiesEndpoint,
   citiesFilterEndpoint,
+  flagsEndpoint,
   getData,
   postData,
 };
