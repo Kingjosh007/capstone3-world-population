@@ -23,6 +23,7 @@ const postData = async (url, data, isText = false) => {
 };
 
 export {
+  baseUrl,
   citiesEndpoint,
   citiesFilterEndpoint,
   flagsEndpoint,
