@@ -7,6 +7,7 @@ const DisplayArea = (props) => {
   } = props;
 
   const containerClass = `${type}-countainer`;
+  const cardClass = type === 'countries' ? 'country' : 'city';
 
   return (
     <div className="display-area">
@@ -16,6 +17,10 @@ const DisplayArea = (props) => {
       </div>
       <div className={containerClass} />
 
+            { type === 'countries' ? elements.map((element) => <DisplayCard key={element.name} type={type} className={cardClass} element={element} />)
+                : elements.map((element) => <DisplayCard key={element.name} type={type} className={cardClass} element={element} />) }
+
+  }
       </div>
     </div>
   );
