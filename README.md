@@ -33,7 +33,7 @@ As a user:
 
 ## Live Demo
 
-This project is not deployed yet. It will be deployed later to **Github Pages** and **Netlify**.
+Here is the link to the live app, along with the deployment status: [See it live](https://world-population-capstone.netlify.app/) [![Netlify Status](https://api.netlify.com/api/v1/badges/2386b40a-f85d-4a43-90ff-77904d3ba148/deploy-status)](https://app.netlify.com/sites/world-population-capstone/deploys)
 
 ## Getting Started
 
