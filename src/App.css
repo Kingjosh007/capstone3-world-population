@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 :root {
-  --primary-1: rgb(45, 20, 92);
+  --primary-1: rgb(76, 45, 133);
   --primary-2: rgb(87, 63, 133);
   --primary-3: rgb(128, 96, 160);
   --primary-4: rgb(160, 128, 192);
@@ -135,9 +135,46 @@ body {
 }
 
 .countries-container > * {
-  flex: 1 1 auto;
+  flex: 1 1 50%;
 }
 
-.countries-container:nth-child(even) .country {
+.countries-container a:nth-child(4n+2),
+.countries-container a:nth-child(4n+3) {
   background-color: var(--primary-1);
+}
+
+.countries-container a:nth-child(4n),
+.countries-container a:nth-child(4n+1) {
+  background-color: var(--primary-2);
+}
+
+.country {
+  display: flex;
+  padding: 1em;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.country-card-header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.country-card-image {
+  width: 55%;
+}
+
+.country-card-image img {
+  width: 70%;
+  height: auto;
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--text-1);
 }

@@ -16,7 +16,7 @@ const DisplayArea = (props) => {
 
   return (
     <div className="display-area">
-      <div className="display-header primary-2">
+      <div className="display-header primary-4">
         <h3 className="text-2">{title}</h3>
       </div>
       <div className={containerClass}>
