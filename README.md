@@ -49,7 +49,7 @@ To get a local copy of this project running in development mode, do the followin
 
 ## Screenshot
 
-A gif screenshot will be available soon.
+![GIF Image showcasing the features](screenshots/features-screenshot.gif)
 
 ## Built With
 
