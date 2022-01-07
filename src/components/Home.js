@@ -11,7 +11,7 @@ const Home = () => {
     dispatch(getCountriesInfos());
   }, [dispatch]);
 
-  const countriesArr = useSelector((state) => state.countriesReducer.countries);
+  const countriesArr = useSelector((state) => state.countriesReducer.displayedCountries);
   let worldInfos = countriesArr.find((ctr) => ctr.name === 'World');
   if (countriesArr.length === 0) {
     worldInfos = {
