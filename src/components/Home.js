@@ -1,33 +1,29 @@
 import React, { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Topbar from './Topbar';
-import MyProfile from './pages/MyProfile';
-import RocketPage from './pages/RocketPage';
-import MissionPage from './pages/MissionPage';
-import NotMatch from './pages/NotMatch';
-import { getRockets } from '../redux/rocket/rocket';
+import { getCountriesInfos } from '../redux/countries/countries';
+import Hero from './Hero';
+import DisplayArea from './DisplayArea';
 
 const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getRockets());
+    dispatch(getCountriesInfos());
   }, [dispatch]);
 
-  const rockets = useSelector((state) => state.rocketReducer.rockets);
-  const bookedRockets = useSelector((state) => state.rocketReducer.bookedRockets);
+  const countriesArr = useSelector((state) => state.countriesReducer.countries);
+  const worldInfos = countriesArr.find((ctr) => ctr.iso3 === 'WLD');
+  const {
+    name, flag, latestPop, latestPopYear,
+  } = worldInfos;
 
   return (
     <div>
       <Topbar />
-      <Routes>
-        <Route path="/Myprofile" element={<MyProfile />} />
-        <Route path="/" element={<RocketPage rockets={rockets} bookedRockets={bookedRockets} />} exact />
-        <Route path="/Mission" element={<MissionPage />} />
-        <Route path="*" element={<NotMatch />} />
-      </Routes>
+      <Hero region={name} population={latestPop} year={latestPopYear} imgLink={flag} />
+      <DisplayArea type="countries" title="Stats by country" elements={countriesArr} />
     </div>
   );
 };
 
-export default SpaceContainer;
+export default Home;

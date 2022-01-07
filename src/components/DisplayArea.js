@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Route, Routes } from 'react-router-dom';
+import DisplayCard from './DisplayCard';
 
 const DisplayArea = (props) => {
   const {
@@ -13,15 +15,25 @@ const DisplayArea = (props) => {
     <div className="display-area">
       <div className="display-header primary-2">
         <h3 className="text-2">{title}</h3>
-        <Filter type={type} />
       </div>
       <div className={containerClass} />
 
-            { type === 'countries' ? elements.map((element) => <DisplayCard key={element.name} type={type} className={cardClass} element={element} />)
-                : elements.map((element) => <DisplayCard key={element.name} type={type} className={cardClass} element={element} />) }
+      { type === 'countries' ? (
+        <Routes>
+          elements.map((element) => (
+          <Route path="/details" element={<DetailsPage type="cities" region={element.name} />} exact />
+          )
+        </Routes>
+      )
+        : elements.map((element) => (
+          <DisplayCard
+            key={element.iso3}
+            type={type}
+            className={cardClass}
+            element={element}
+          />
+        ))}
 
-  }
-      </div>
     </div>
   );
 };
