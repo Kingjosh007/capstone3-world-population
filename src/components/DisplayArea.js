@@ -19,28 +19,29 @@ const DisplayArea = (props) => {
       <div className="display-header primary-2">
         <h3 className="text-2">{title}</h3>
       </div>
-      <div className={containerClass} />
+      <div className={containerClass}>
 
-      { type === 'countries'
-        ? elements.map((element) => (
-          <Link to={`/details/${element.iso3}`} key={element.iso3}>
+        { type === 'countries'
+          ? elements.map((element) => (
+            <Link to={`/details/${element.iso3}`} key={element.iso3}>
+              <DisplayCard
+                key={element.iso3}
+                type={type}
+                className={cardClass}
+                element={element}
+              />
+            </Link>
+          ))
+          : elements.map((element) => (
             <DisplayCard
               key={element.iso3}
               type={type}
               className={cardClass}
               element={element}
             />
-          </Link>
-        ))
-        : elements.map((element) => (
-          <DisplayCard
-            key={element.iso3}
-            type={type}
-            className={cardClass}
-            element={element}
-          />
-        ))}
+          ))}
 
+      </div>
     </div>
   );
 };
