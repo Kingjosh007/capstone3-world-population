@@ -1,9 +1,12 @@
-import { baseUrl, flagsEndpoint, getData } from '../../utils/apiRelated';
+import {
+  baseUrl, flagsEndpoint, citiesFilterEndpoint, getData, postData,
+} from '../../utils/apiRelated';
 import mf from '../../utils/missingFlags';
 import formatNumber from '../../utils/formatNumber';
 
 const GET_ALL_COUNTRIES_INFOS = 'countries/GET_ALL_COUNTRIES_INFOS';
 const FILTER_COUNTRIES = 'countries/FILTER_COUNTRIES';
+const GET_COUNTRY_POP_DETAILS = 'countries/GET_COUNTRY_POP_DETAILS';
 
 const initialState = {
   countries: [],
@@ -64,6 +67,33 @@ export const getCountriesInfos = () => async (dispatch) => {
   dispatch({ type: GET_ALL_COUNTRIES_INFOS, payload: countriesArr });
 };
 
+export const getCountriesPopDetails = (ctrData) => async (dispatch) => {
+  const retObj = ctrData;
+  console.log(retObj);
+  if (ctrData.name !== 'Unknown') {
+    const params = {
+      limit: 100,
+      order: 'asc',
+      orderBy: 'name',
+      country: ctrData.name.toLowerCase(),
+    };
+    const cities = await postData(citiesFilterEndpoint, params);
+    let citiesArr = cities.data;
+    if (citiesArr.length > 0) {
+      citiesArr = citiesArr.map((city) => ({
+        name: city.city,
+        latestPop: city.populationCounts.slice(-1)[0].value,
+        latestPopYear: city.populationCounts.slice(-1)[0].year,
+      }));
+    }
+    retObj.populationData = citiesArr;
+  } else {
+    retObj.populationData = [];
+  }
+  console.log(retObj);
+  dispatch({ type: GET_COUNTRY_POP_DETAILS, payload: retObj });
+};
+
 export const filterCountries = (search) => (dispatch) => {
   dispatch({ type: FILTER_COUNTRIES, payload: search });
 };
@@ -85,6 +115,12 @@ const countriesReducer = (state = initialState, action) => {
       ...state,
       countries: action.payload,
       displayedCountries: action.payload,
+    };
+  }
+  if (action.type === GET_COUNTRY_POP_DETAILS) {
+    return {
+      ...state,
+      countryPopDetails: action.payload,
     };
   }
 

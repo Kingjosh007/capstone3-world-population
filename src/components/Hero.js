@@ -36,13 +36,14 @@ Hero.propTypes = {
   region: PropTypes.string,
   population: PropTypes.string,
   year: PropTypes.string,
-  imgLink: PropTypes.string.isRequired,
+  imgLink: PropTypes.string,
 };
 
 Hero.defaultProps = {
   region: 'World',
   population: 'Unknown',
   year: '2018',
+  imgLink: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/No_flag.svg',
 };
 
 export default Hero;
