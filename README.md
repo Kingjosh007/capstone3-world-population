@@ -29,10 +29,6 @@ As a user:
 - I can see on the home page the list of countries/regions and their population.
 - When I click a country card, I'm taken to a page with the country's population details.
 - On the details page I can see details about the population of the selected country, city by city.
-- **[BONUS]** On the home page I can sort the countries either by name or by population, ascending or descending.
-- **[BONUS]** On the details page I can see a chart showing how the population evolved over time (1960 - 2018).
-- **[BONUS]** When I click a city, I can see a popup with a chart showing how its population evolved over time (1960 - 2018)
-
 
 
 ## Live Demo
