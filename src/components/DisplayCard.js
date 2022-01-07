@@ -9,8 +9,13 @@ const DisplayCard = (props) => {
   if (type === 'countries') {
     return (
       <div className={className}>
-        <div className="country-card-image">
-          <img src={element.flag} alt={altText} />
+        <div className="country-card-header">
+          <div className="country-card-image">
+            <img src={element.flag} alt={altText} />
+          </div>
+          <div className="arrow-icon">
+            <FaRegArrowAltCircleRight />
+          </div>
         </div>
         <div className="country-card-content">
           <div className="country-card-name">{element.name}</div>
@@ -20,9 +25,6 @@ const DisplayCard = (props) => {
             {element.latestPopYear}
             )
           </div>
-        </div>
-        <div className="arrow-icon">
-          <FaRegArrowAltCircleRight />
         </div>
       </div>
     );

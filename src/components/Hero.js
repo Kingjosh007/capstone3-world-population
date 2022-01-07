@@ -8,25 +8,24 @@ const Hero = (props) => {
   const altText = `Flag or area of ${region}`;
 
   return (
-    <div className="hero primary-1">
+    <div className="hero primary-3">
       <div className="hero-image">
         <img src={imgLink} alt={altText} />
       </div>
       <div className="hero-content">
         <div className="hero-region">{region}</div>
         <div className="hero-pop">
-          <span className="hero-actual-pop">
-            {' '}
-            {population}
-            {' '}
-          </span>
-          <span className="hero-year">
-            {' '}
+          <div>
+            <span className="hero-actual-pop">
+              {population}
+            </span>
+            {' inhab.'}
+          </div>
+          <div className="hero-year">
             (
             {year}
             )
-            {' '}
-          </span>
+          </div>
         </div>
       </div>
     </div>

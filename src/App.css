@@ -19,6 +19,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Lato', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .primary-1 {
@@ -63,4 +65,80 @@ body {
 .topbar .icons-right {
   display: flex;
   gap: 2em;
+}
+
+/* Hero */
+
+.hero {
+  padding: 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero .hero-image {
+  width: 100%;
+}
+
+.hero .hero-image img {
+  width: 75%;
+  height: auto;
+}
+
+.hero .hero-content {
+  margin-top: -2em;
+  margin-left: -17%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-1);
+  gap: 1em;
+}
+
+.hero-region {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero-pop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.8em;
+  gap: 0.3em;
+}
+
+.hero-pop .hero-actual-pop {
+  font-weight: 800;
+}
+
+.hero-pop .hero-year {
+  font-style: italic;
+}
+
+/* Display Area */
+
+.display-area {
+  margin: 0;
+}
+
+.display-header {
+  padding: 0.5em 1em;
+  color: var(--text-2);
+  text-transform: uppercase;
+}
+
+.countries-container {
+
+}
+
+.countries-container:nth-child(4n+2),
+.countries-container:nth-child(4n+3) {
+  background-color: var(--primary-1);
+}
+
+.countries-container:nth-child(4n),
+.countries-container:nth-child(4n+1) {
+  background-color: var(--primary-2);
 }
