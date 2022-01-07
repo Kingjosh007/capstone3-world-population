@@ -12,7 +12,15 @@ const Home = () => {
   }, [dispatch]);
 
   const countriesArr = useSelector((state) => state.countriesReducer.countries);
-  const worldInfos = countriesArr.find((ctr) => ctr.iso3 === 'WLD');
+  let worldInfos = countriesArr.find((ctr) => ctr.name === 'World');
+  if (countriesArr.length === 0) {
+    worldInfos = {
+      name: 'Unknown',
+      flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_World.svg/1200px-Flag_of_the_World.svg.png',
+      latestPop: 'Unknown',
+      latestPopYear: '2022',
+    };
+  }
   const {
     name, flag, latestPop, latestPopYear,
   } = worldInfos;

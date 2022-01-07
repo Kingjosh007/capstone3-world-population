@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaAngleLeft, FaMicrophone, FaCog } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
@@ -9,9 +9,9 @@ const Topbar = (props) => {
   return (
     <nav className="topbar primary-4">
       <div>
-        <NavLink to="/" className="text-1">
+        <Link to="/Home" className="text-1">
           <FaAngleLeft />
-        </NavLink>
+        </Link>
       </div>
       <div>
         <h5 className="text-2">{title}</h5>

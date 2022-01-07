@@ -12,6 +12,7 @@ export const getCountriesInfos = () => async (dispatch) => {
   const countriesFromFlags = flags.data;
   const pops = await getData(baseUrl);
   const countriesWithPops = pops.data;
+  console.log(countriesWithPops);
   const allIso3 = [...new Set([...countriesFromFlags, ...countriesWithPops].map((el) => el.iso3))];
 
   const countriesArr = allIso3.map((iso3) => {
