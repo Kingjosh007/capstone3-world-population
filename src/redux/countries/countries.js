@@ -3,6 +3,7 @@ import mf from '../../utils/missingFlags';
 import formatNumber from '../../utils/formatNumber';
 
 const GET_ALL_COUNTRIES_INFOS = 'countries/GET_ALL_COUNTRIES_INFOS';
+const FILTER_COUNTRIES = 'countries/FILTER_COUNTRIES';
 
 const initialState = {
   countries: [],
@@ -64,15 +65,26 @@ export const getCountriesInfos = () => async (dispatch) => {
 };
 
 const countriesReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case GET_ALL_COUNTRIES_INFOS:
-      return {
-        ...state,
-        countries: action.payload,
-      };
-    default:
-      return state;
+  if (action.type === FILTER_COUNTRIES) {
+    const search = action.payload.toLowerCase();
+    let filtered = state.countries;
+    if (search.length > 0) {
+      filtered = filtered.filter((ctr) => ctr.name.toLowerCase().includes(search));
+    }
+    return {
+      ...state,
+      displayedCountries: filtered,
+    };
   }
+  if (action.type === GET_ALL_COUNTRIES_INFOS) {
+    return {
+      ...state,
+      countries: action.payload,
+      displayedCountries: action.payload,
+    };
+  }
+
+  return state;
 };
 
 export default countriesReducer;
