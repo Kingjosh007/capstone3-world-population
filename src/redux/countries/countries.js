@@ -12,24 +12,43 @@ export const getCountriesInfos = () => async (dispatch) => {
   const countriesFromFlags = flags.data;
   const pops = await getData(baseUrl);
   const countriesWithPops = pops.data;
-  const allIso3 = [...new Set([...countriesFromFlags, ...countriesWithPops].map((el) => el.iso3))];
+  const allIso3 = [...new Set([...countriesFromFlags.filter((ctr) => ctr.iso3),
+    ...countriesWithPops.filter((ctr) => ctr.iso3)].map((el) => el.iso3))];
 
   const countriesArr = allIso3.map((iso3) => {
     const retObj = { iso3 };
-    const ctrInflags = countriesFromFlags.find((ctr) => ctr.iso3 === iso3);
-    const ctrInPops = countriesWithPops.find((ctr) => ctr.iso3 === iso3);
+    const ctrInflags = countriesFromFlags.filter((ctr) => ctr.iso3)
+      .find((ctr) => ctr.iso3 === iso3);
+
+    const ctrInPops = countriesWithPops.filter((ctr) => ctr.iso3)
+      .find((ctr) => ctr.iso3 === iso3);
+
     if (!ctrInPops) {
       retObj.name = countriesFromFlags.find((ctr) => ctr.iso3 === iso3).name;
     } else {
       retObj.name = ctrInPops.country;
     }
-    retObj.flag = mf[ctrInflags.name] ? mf[ctrInflags.name] : ctrInflags.flag;
-    if (mf[ctrInPops.iso3]) {
-      retObj.flag = mf[ctrInPops.iso3];
+
+    if (mf[retObj.name] || mf[iso3]) {
+      if (mf[retObj.name]) {
+        retObj.flag = mf[retObj.name];
+      }
+      if (mf[iso3]) {
+        retObj.flag = mf[iso3];
+      }
+    } else if (ctrInflags) {
+      retObj.flag = ctrInflags.flag || 'https://upload.wikimedia.org/wikipedia/commons/b/b0/No_flag.svg';
+    } else {
+      retObj.flag = 'https://upload.wikimedia.org/wikipedia/commons/b/b0/No_flag.svg';
     }
 
-    retObj.latestPop = ctrInPops.populationCounts.slice(-1)[0].value;
-    retObj.latestPopYear = ctrInPops.populationCounts.slice(-1)[0].year;
+    if (!ctrInPops) {
+      retObj.latestPop = 'Unknown';
+      retObj.latestPopYear = '2022';
+    } else {
+      retObj.latestPop = ctrInPops.populationCounts.slice(-1)[0].value;
+      retObj.latestPopYear = ctrInPops.populationCounts.slice(-1)[0].year;
+    }
 
     return retObj;
   });
