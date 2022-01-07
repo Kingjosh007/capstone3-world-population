@@ -1,5 +1,6 @@
 import { baseUrl, flagsEndpoint, getData } from '../../utils/apiRelated';
 import mf from '../../utils/missingFlags';
+import formatNumber from '../../utils/formatNumber';
 
 const GET_ALL_COUNTRIES_INFOS = 'countries/GET_ALL_COUNTRIES_INFOS';
 
@@ -48,6 +49,10 @@ export const getCountriesInfos = () => async (dispatch) => {
     } else {
       retObj.latestPop = ctrInPops.populationCounts.slice(-1)[0].value;
       retObj.latestPopYear = ctrInPops.populationCounts.slice(-1)[0].year;
+    }
+
+    if(retObj.latestPop !== 'Unknown') {
+      retObj.latestPop = formatNumber(retObj.latestPop);
     }
 
     return retObj;
