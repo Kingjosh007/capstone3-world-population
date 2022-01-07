@@ -14,7 +14,7 @@ const Topbar = (props) => {
         </Link>
       </div>
       <div>
-        <h5 className="text-2">{title}</h5>
+        <h5 className="main-title text-2">{title}</h5>
       </div>
       <div className="icons-right">
         <FaMicrophone className="text-1" />

@@ -15,6 +15,12 @@
   box-sizing: border-box;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
 .primary-1 {
   background-color: var(--primary-1) !important;
 }
@@ -41,8 +47,20 @@
 
 /* Topbar */
 .topbar {
-  padding-inline: 1em;
+  padding-inline: 1.5em;
+  padding-block: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.topbar .main-title {
+  font-size: 0.8em;
+  font-weight: 100;
+  color: var(--text-2);
+}
+
+.topbar .icons-right {
+  display: flex;
+  gap: 2em;
 }
