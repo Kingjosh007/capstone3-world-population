@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Topbar from '../Topbar';
 import { getCountriesPopDetails } from '../../redux/countries/countries';
 import Hero from '../Hero';
+import DisplayArea from '../DisplayArea';
 
 const DetailsPage = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const DetailsPage = () => {
   }, [dispatch]);
 
   const popDetails = useSelector((state) => state.countriesReducer.countryPopDetails);
+  console.log(popDetails);
   const {
     name, flag, latestPop, latestPopYear,
   } = popDetails;
@@ -28,6 +30,7 @@ const DetailsPage = () => {
     <div className="detailsPage">
       <Topbar title="Country pop. details" />
       <Hero region={name} population={latestPop} year={latestPopYear} imgLink={flag} />
+      <DisplayArea type="cities" title="Population by city/town" hint="The capital city is written in ALL CAPS." />
     </div>
   );
 };

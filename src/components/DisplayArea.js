@@ -7,18 +7,27 @@ import Filter from './Filter';
 
 const DisplayArea = (props) => {
   const {
-    type, title,
+    type, title, hint,
   } = props;
-
-  const elements = useSelector((state) => state.countriesReducer.displayedCountries);
 
   const containerClass = `${type}-container`;
   const cardClass = type === 'countries' ? 'country' : 'city';
+  let elements = [];
+
+  if (type === 'countries') {
+    elements = useSelector((state) => state.countriesReducer.displayedCountries);
+  } else {
+    const elts = useSelector((state) => state.countriesReducer.countryPopDetails);
+    elements = elts.populationData || [];
+  }
 
   return (
     <div className="display-area">
       <div className="display-header primary-3">
-        <h3 className="text-2">{title}</h3>
+        <div className="display-header-left">
+          <h3 className="text-2">{title}</h3>
+          <div className="hint">{hint}</div>
+        </div>
         { type === 'countries' ? (
           <div className="filter-input">
             <Filter />
@@ -55,11 +64,13 @@ const DisplayArea = (props) => {
 DisplayArea.propTypes = {
   type: PropTypes.string,
   title: PropTypes.string,
+  hint: PropTypes.string,
 };
 
 DisplayArea.defaultProps = {
   type: 'countries',
   title: 'Pop. by country',
+  hint: '',
 };
 
 export default DisplayArea;
