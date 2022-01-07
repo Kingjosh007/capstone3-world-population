@@ -64,6 +64,10 @@ export const getCountriesInfos = () => async (dispatch) => {
   dispatch({ type: GET_ALL_COUNTRIES_INFOS, payload: countriesArr });
 };
 
+export const filterCountries = (search) => (dispatch) => {
+  dispatch({ type: FILTER_COUNTRIES, payload: search });
+};
+
 const countriesReducer = (state = initialState, action) => {
   if (action.type === FILTER_COUNTRIES) {
     const search = action.payload.toLowerCase();
