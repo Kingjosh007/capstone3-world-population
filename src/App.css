@@ -77,7 +77,7 @@ body {
 }
 
 .hero .hero-image {
-  width: 90%;
+  width: 80%;
 }
 
 .hero .hero-image img {
@@ -244,10 +244,30 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: var(--text-1);
 }
 
+.city-card-name {
+  font-size: 0.9em;
+  font-weight: 900;
+}
 .city-card-details {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 1.5em;
+  font-size: 0.8em;
+}
+
+.city-card-details .city-card-year {
+  font-size: 0.75em;
+  color: var(--text-2);
+  font-style: italic;
+}
+
+.cities-container .city:nth-child(even) {
+  background-color: var(--primary-2);
+}
+
+.cities-container .city:nth-child(odd) {
+  background-color: var(--primary-1);
 }
