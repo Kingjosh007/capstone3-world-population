@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import DisplayCard from './DisplayCard';
-import DetailsPage from './pages/DetailsPage';
 
 const DisplayArea = (props) => {
   const {
@@ -19,15 +18,10 @@ const DisplayArea = (props) => {
       </div>
       <div className={containerClass} />
 
-      { type === 'countries' ? (
-        <BrowserRouter>
-          <Routes>
-            {elements.map((element) => (
-              <Route path="/details" key={element.iso3} element={<DetailsPage type="cities" region={element.name} />} exact />
-            ))}
-          </Routes>
-        </BrowserRouter>
-      )
+      { type === 'countries'
+        ? elements.map((element) => (
+          <Link to={`/details/${element.iso3}`} key={element.iso3} />
+        ))
         : elements.map((element) => (
           <DisplayCard
             key={element.iso3}

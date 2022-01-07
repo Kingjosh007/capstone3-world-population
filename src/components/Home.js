@@ -16,7 +16,7 @@ const Home = () => {
   if (countriesArr.length === 0) {
     worldInfos = {
       name: 'Unknown',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_World.svg/1200px-Flag_of_the_World.svg.png',
+      flag: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Flag-map_of_the_world.svg',
       latestPop: 'Unknown',
       latestPopYear: '2022',
     };

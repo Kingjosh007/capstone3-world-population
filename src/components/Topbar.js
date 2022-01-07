@@ -9,7 +9,7 @@ const Topbar = (props) => {
   return (
     <nav className="topbar primary-4">
       <div>
-        <Link to="/Home" className="text-1">
+        <Link to="Home" className="text-1">
           <FaAngleLeft />
         </Link>
       </div>

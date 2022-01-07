@@ -12,14 +12,17 @@ export const getCountriesInfos = () => async (dispatch) => {
   const countriesFromFlags = flags.data;
   const pops = await getData(baseUrl);
   const countriesWithPops = pops.data;
-  console.log(countriesWithPops);
   const allIso3 = [...new Set([...countriesFromFlags, ...countriesWithPops].map((el) => el.iso3))];
 
   const countriesArr = allIso3.map((iso3) => {
     const retObj = { iso3 };
     const ctrInflags = countriesFromFlags.find((ctr) => ctr.iso3 === iso3);
     const ctrInPops = countriesWithPops.find((ctr) => ctr.iso3 === iso3);
-    retObj.name = ctrInPops.country;
+    if (!ctrInPops) {
+      retObj.name = countriesFromFlags.find((ctr) => ctr.iso3 === iso3).name;
+    } else {
+      retObj.name = ctrInPops.country;
+    }
     retObj.flag = mf[ctrInflags.name] ? mf[ctrInflags.name] : ctrInflags.flag;
     if (mf[ctrInPops.iso3]) {
       retObj.flag = mf[ctrInPops.iso3];
@@ -29,7 +32,7 @@ export const getCountriesInfos = () => async (dispatch) => {
 
     return retObj;
   });
-
+  console.log(countriesArr);
   dispatch({ type: GET_ALL_COUNTRIES_INFOS, payload: countriesArr });
 };
 
