@@ -21,7 +21,6 @@ const DetailsPage = () => {
   }, [dispatch]);
 
   const popDetails = useSelector((state) => state.countriesReducer.countryPopDetails);
-  console.log(popDetails);
   const {
     name, flag, latestPop, latestPopYear,
   } = popDetails;
