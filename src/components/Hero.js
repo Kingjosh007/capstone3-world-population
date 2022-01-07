@@ -43,7 +43,7 @@ Hero.propTypes = {
 Hero.defaultProps = {
   region: 'World',
   population: 'Unknown',
-  year: 2018,
+  year: '2018',
 };
 
 export default Hero;

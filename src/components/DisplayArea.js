@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import DisplayCard from './DisplayCard';
 
 const DisplayArea = (props) => {
   const {
-    type, title, elements,
+    type, title,
   } = props;
+
+  const elements = useSelector((state) => state.countriesReducer.countries);
 
   const containerClass = `${type}-countainer`;
   const cardClass = type === 'countries' ? 'country' : 'city';
@@ -20,7 +23,14 @@ const DisplayArea = (props) => {
 
       { type === 'countries'
         ? elements.map((element) => (
-          <Link to={`/details/${element.iso3}`} key={element.iso3} />
+          <Link to={`/details/${element.iso3}`} key={element.iso3}>
+            <DisplayCard
+              key={element.iso3}
+              type={type}
+              className={cardClass}
+              element={element}
+            />
+          </Link>
         ))
         : elements.map((element) => (
           <DisplayCard
@@ -38,13 +48,11 @@ const DisplayArea = (props) => {
 DisplayArea.propTypes = {
   type: PropTypes.string,
   title: PropTypes.string,
-  elements: PropTypes.arrayOf(PropTypes.object),
 };
 
 DisplayArea.defaultProps = {
   type: 'countries',
   title: 'Pop. by country',
-  elements: [],
 };
 
 export default DisplayArea;

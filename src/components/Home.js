@@ -29,7 +29,7 @@ const Home = () => {
     <div>
       <Topbar title="World population" />
       <Hero region={name} population={latestPop} year={latestPopYear} imgLink={flag} />
-      <DisplayArea type="countries" title="Stats by country" elements={countriesArr} />
+      <DisplayArea type="countries" title="Stats by country" />
     </div>
   );
 };

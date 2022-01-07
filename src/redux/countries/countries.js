@@ -51,13 +51,13 @@ export const getCountriesInfos = () => async (dispatch) => {
       retObj.latestPopYear = ctrInPops.populationCounts.slice(-1)[0].year;
     }
 
-    if(retObj.latestPop !== 'Unknown') {
+    if (retObj.latestPop !== 'Unknown') {
       retObj.latestPop = formatNumber(retObj.latestPop);
     }
+    retObj.latestPopYear = String(retObj.latestPopYear);
 
     return retObj;
   });
-  console.log(countriesArr);
   dispatch({ type: GET_ALL_COUNTRIES_INFOS, payload: countriesArr });
 };
 
