@@ -1,1 +1,48 @@
-/* stylelint-disable-next-line no-empty-source */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+  --primary-1: rgb(45, 20, 92);
+  --primary-2: rgb(87, 63, 133);
+  --primary-3: rgb(128, 96, 160);
+  --primary-4: rgb(160, 128, 192);
+  --text-1: rgb(255, 255, 255);
+  --text-2: rgb(228, 222, 222);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.primary-1 {
+  background-color: var(--primary-1) !important;
+}
+
+.primary-2 {
+  background-color: var(--primary-2) !important;
+}
+
+.primary-3 {
+  background-color: var(--primary-3) !important;
+}
+
+.primary-4 {
+  background-color: var(--primary-4) !important;
+}
+
+.text-1 {
+  color: var(--text-1);
+}
+
+.text-2 {
+  color: var(--text-2);
+}
+
+/* Topbar */
+.topbar {
+  padding-inline: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

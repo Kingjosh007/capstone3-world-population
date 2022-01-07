@@ -4,12 +4,13 @@ import { FaRegArrowAltCircleRight } from 'react-icons/fa';
 
 const DisplayCard = (props) => {
   const { type, className, element } = props;
+  const altText = `Flag or area of ${element.name}`;
 
   if (type === 'countries') {
     return (
       <div className={className}>
         <div className="country-card-image">
-          {element.flag}
+          <img src={element.flag} alt={altText} />
         </div>
         <div className="country-card-content">
           <div className="country-card-name">{element.name}</div>
