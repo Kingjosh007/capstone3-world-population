@@ -27,6 +27,7 @@ export const getCountriesInfos = () => async (dispatch) => {
     if (mf[ctrInPops.iso3]) {
       retObj.flag = mf[ctrInPops.iso3];
     }
+
     retObj.latestPop = ctrInPops.populationCounts.slice(-1)[0].value;
     retObj.latestPopYear = ctrInPops.populationCounts.slice(-1)[0].year;
 
