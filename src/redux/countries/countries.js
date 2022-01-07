@@ -89,7 +89,10 @@ export const getCountriesPopDetails = (ctrData) => async (dispatch) => {
       const capitalCities = citiesArr.filter((c) => c.name === c.name.toUpperCase());
       const otherCities = citiesArr.filter((c) => c.name !== c.name.toUpperCase());
 
-      citiesArr = [...capitalCities, ...otherCities];
+      citiesArr = [...capitalCities, ...otherCities].map((city) => ({
+        ...city,
+        latestPop: formatNumber(city.latestPop),
+      }));
     }
     retObj.populationData = citiesArr;
   } else {

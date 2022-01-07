@@ -243,8 +243,9 @@ body {
   padding: 1em;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   color: var(--text-1);
+  position: relative;
 }
 
 .city-card-name {
@@ -254,14 +255,20 @@ body {
 .city-card-details {
   display: flex;
   flex-direction: row;
-  gap: 1.5em;
-  font-size: 0.8em;
+  gap: 2em;
+  justify-content: flex-start;
+  font-size: 1em;
 }
 
 .city-card-details .city-card-year {
-  font-size: 0.75em;
+  font-size: 0.85em;
   color: var(--text-2);
   font-style: italic;
+}
+
+.city-card-details .arrow-icon {
+  position: absolute;
+  right: 20px;
 }
 
 .cities-container .city:nth-child(even) {
