@@ -54,7 +54,7 @@ DisplayCard.propTypes = {
   element: PropTypes.shape({
     name: PropTypes.string,
     latestPop: PropTypes.string,
-    latestPopYear: PropTypes.number,
+    latestPopYear: PropTypes.string,
     flag: PropTypes.string,
   }),
 };
@@ -64,7 +64,7 @@ DisplayCard.defaultProps = {
   element: {
     name: 'Fetching...',
     latestPop: 'Unknown',
-    latestPopYear: 2022,
+    latestPopYear: '2022',
     flag: '',
   },
 };

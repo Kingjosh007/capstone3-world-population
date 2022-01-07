@@ -11,7 +11,7 @@ const Home = () => {
     dispatch(getCountriesInfos());
   }, [dispatch]);
 
-  const countriesArr = useSelector((state) => state.countriesReducer.displayedCountries);
+  const countriesArr = useSelector((state) => state.countriesReducer.countries);
   let worldInfos = countriesArr.find((ctr) => ctr.name === 'World');
   if (countriesArr.length === 0) {
     worldInfos = {
@@ -21,6 +21,7 @@ const Home = () => {
       latestPopYear: '2022',
     };
   }
+
   const {
     name, flag, latestPop, latestPopYear,
   } = worldInfos;

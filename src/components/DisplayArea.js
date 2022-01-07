@@ -10,7 +10,7 @@ const DisplayArea = (props) => {
     type, title,
   } = props;
 
-  const elements = useSelector((state) => state.countriesReducer.countries);
+  const elements = useSelector((state) => state.countriesReducer.displayedCountries);
 
   const containerClass = `${type}-container`;
   const cardClass = type === 'countries' ? 'country' : 'city';

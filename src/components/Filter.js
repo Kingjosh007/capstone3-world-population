@@ -12,8 +12,8 @@ const Filter = () => {
       name="some-input"
       classList={['col', 'sm-6', 'md-6']}
       onChange={(value) => dispatch(filterCountries(value))}
-      attrs={{ placeholder: 'Filter countries' }}
-      isValid="true"
+      attrs={{ placeholder: 'Search countries' }}
+      isValid
     />
   );
 };
