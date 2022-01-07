@@ -91,7 +91,7 @@ export const getCountriesPopDetails = (ctrData) => async (dispatch) => {
 
       citiesArr = [...capitalCities, ...otherCities].map((city) => ({
         ...city,
-        latestPop: formatNumber(city.latestPop),
+        latestPop: formatNumber(Math.round(Number(city.latestPop))),
       }));
     }
     retObj.populationData = citiesArr;
