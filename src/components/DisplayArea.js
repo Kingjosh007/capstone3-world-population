@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Routes } from 'react-router-dom';
 import DisplayCard from './DisplayCard';
+import DetailsPage from './pages/DetailsPage';
 
 const DisplayArea = (props) => {
   const {
@@ -20,9 +21,9 @@ const DisplayArea = (props) => {
 
       { type === 'countries' ? (
         <Routes>
-          elements.map((element) => (
-          <Route path="/details" element={<DetailsPage type="cities" region={element.name} />} exact />
-          )
+          {elements.map((element) => (
+            <Route path="/details" key={element.iso3} element={<DetailsPage type="cities" region={element.name} />} exact />
+          ))}
         </Routes>
       )
         : elements.map((element) => (
