@@ -69,10 +69,9 @@ export const getCountriesInfos = () => async (dispatch) => {
 
 export const getCountriesPopDetails = (ctrData) => async (dispatch) => {
   const retObj = ctrData;
-  console.log(retObj);
   if (ctrData.name !== 'Unknown') {
     const params = {
-      limit: 100,
+      limit: 1000,
       order: 'asc',
       orderBy: 'name',
       country: ctrData.name.toLowerCase(),
@@ -84,13 +83,18 @@ export const getCountriesPopDetails = (ctrData) => async (dispatch) => {
         name: city.city,
         latestPop: city.populationCounts.slice(-1)[0].value,
         latestPopYear: city.populationCounts.slice(-1)[0].year,
-      }));
+      }))
+        .sort((c1, c2) => Number(c2.latestPop) - Number(c1.latestPop));
+
+      const capitalCities = citiesArr.filter((c) => c.name === c.name.toUpperCase());
+      const otherCities = citiesArr.filter((c) => c.name !== c.name.toUpperCase());
+
+      citiesArr = [...capitalCities, ...otherCities];
     }
     retObj.populationData = citiesArr;
   } else {
     retObj.populationData = [];
   }
-  console.log(retObj);
   dispatch({ type: GET_COUNTRY_POP_DETAILS, payload: retObj });
 };
 
