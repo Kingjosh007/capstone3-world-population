@@ -253,6 +253,7 @@ body {
   font-size: 0.9em;
   font-weight: 900;
 }
+
 .city-card-details {
   display: flex;
   flex-direction: row;
