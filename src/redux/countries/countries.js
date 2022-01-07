@@ -6,6 +6,8 @@ const GET_ALL_COUNTRIES_INFOS = 'countries/GET_ALL_COUNTRIES_INFOS';
 
 const initialState = {
   countries: [],
+  displayedCountries: [],
+  countryPopDetails: {},
 };
 
 export const getCountriesInfos = () => async (dispatch) => {

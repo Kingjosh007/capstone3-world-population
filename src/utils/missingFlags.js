@@ -33,6 +33,7 @@ const mf = {
   Venezuela: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Flag_of_Venezuela.svg/1200px-Flag_of_Venezuela.svg.png',
   'Western Sahara': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Flag_of_the_Sahrawi_Arab_Democratic_Republic.svg/900px-Flag_of_the_Sahrawi_Arab_Democratic_Republic.svg.png',
   World: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Flag-map_of_the_world.svg',
+  ARB: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/A_map_of_the_Arab_World_with_flags.png',
 };
 
 export default mf;

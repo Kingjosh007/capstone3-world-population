@@ -11,7 +11,7 @@ const DisplayCard = (props) => {
       <div className={className}>
         <div className="country-card-header">
           <div className="country-card-image">
-            <img src={element.flag} alt={altText} />
+            <img src={element.flag} alt={altText} className="ccimg" />
           </div>
           <div className="arrow-icon">
             <FaRegArrowAltCircleRight />

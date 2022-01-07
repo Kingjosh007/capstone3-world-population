@@ -7,7 +7,7 @@ const Topbar = (props) => {
   const { title } = props;
 
   return (
-    <nav className="topbar primary-4">
+    <nav className="topbar primary-3">
       <div>
         <Link to="Home" className="text-1">
           <FaAngleLeft />

@@ -57,8 +57,8 @@ body {
 }
 
 .topbar .main-title {
-  font-size: 0.8em;
-  font-weight: 100;
+  font-size: 0.9em;
+  font-weight: 900;
   color: var(--text-2);
 }
 
@@ -77,16 +77,16 @@ body {
 }
 
 .hero .hero-image {
-  width: 100%;
+  width: 90%;
 }
 
 .hero .hero-image img {
-  width: 75%;
+  width: 70%;
   height: auto;
 }
 
 .hero .hero-content {
-  margin-top: -2em;
+  margin-top: -2.5em;
   margin-left: -17%;
   text-align: left;
   display: flex;
@@ -138,6 +138,10 @@ body {
   flex: 1 1 50%;
 }
 
+.countries-container a {
+  text-decoration: none;
+}
+
 .countries-container a:nth-child(4n+2),
 .countries-container a:nth-child(4n+3) {
   background-color: var(--primary-1);
@@ -151,6 +155,7 @@ body {
 .country {
   display: flex;
   padding: 1em;
+  padding-inline: 2em;
   flex-direction: column;
   gap: 1em;
 }
@@ -160,21 +165,44 @@ body {
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .country-card-image {
   width: 55%;
 }
 
-.country-card-image img {
-  width: 70%;
+.country-card-image .ccimg {
+  width: 60%;
   height: auto;
 }
 
 .arrow-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: var(--text-1);
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: var(--text-1);
+}
+
+.country-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  align-items: flex-end;
+  color: var(--text-1);
+}
+
+.country-card-name {
+  font-size: 1.6em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.country-card-pop {
+  font-size: 1.2em;
+}
+
+.country-card-year {
+  font-size: 0.8em;
+  font-weight: 100;
 }

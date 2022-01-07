@@ -8,7 +8,7 @@ const Hero = (props) => {
   const altText = `Flag or area of ${region}`;
 
   return (
-    <div className="hero primary-3">
+    <div className="hero primary-4">
       <div className="hero-image">
         <img src={imgLink} alt={altText} />
       </div>
