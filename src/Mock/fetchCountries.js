@@ -1,5 +1,5 @@
 import getCountries from './fetchApi';
 
-const fetchData = () => getCountries().then((data) => data.countries);
+const fetchCountries = () => getCountries().then((data) => data.countries);
 
-export default fetchData;
+export default fetchCountries;
