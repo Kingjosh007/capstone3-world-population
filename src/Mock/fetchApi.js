@@ -1,4 +1,4 @@
-const countries = () => Promise.resolve({
+const getCountries = () => Promise.resolve({
   data: {
     countries: [
       {
@@ -860,4 +860,4 @@ const countries = () => Promise.resolve({
   },
 });
 
-export default countries;
+export default getCountries;
