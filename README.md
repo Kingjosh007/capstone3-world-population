@@ -6,7 +6,7 @@
 
 ### About the requirements
 
-> This is the repo for the third capstone project in my Microverse journey. It's a React app about world population. A video of me presenting the project is available [here](https://www.loom.com/share/).
+> This is the repo for the third capstone project in my Microverse journey. It's a React app about world population. A video of me presenting the project is available [here](https://www.loom.com/share/1d74a028ffdb4b62a5ab6998c4d63ae6).
 
 I had to put together all the knowledge I gained from the React/Redux module at Microverse in order to build this project in 5 working days. The project had to be API-based and the requirements included: 
 
