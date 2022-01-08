@@ -21,6 +21,7 @@
     "react-router": "^6.2.1",
     "react-router-dom": "^6.0.0",
     "react-scripts": "4.0.3",
+    "react-test-renderer": "^17.0.2",
     "react-sweet-progress": "^1.1.2",
     "redux": "^4.1.2",
     "redux-logger": "^3.0.6",
