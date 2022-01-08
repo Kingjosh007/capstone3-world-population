@@ -6,7 +6,7 @@
 
 ### About the requirements
 
-> This is the repo for the third capstone project in my Microverse journey. It's a React app about world population. A video of me presenting the project is available [here](https://www.loom.com/share/).
+> This is the repo for the third capstone project in my Microverse journey. It's a React app about world population. A video of me presenting the project is available [here](https://www.loom.com/share/1d74a028ffdb4b62a5ab6998c4d63ae6).
 
 I had to put together all the knowledge I gained from the React/Redux module at Microverse in order to build this project in 5 working days. The project had to be API-based and the requirements included: 
 
@@ -29,15 +29,11 @@ As a user:
 - I can see on the home page the list of countries/regions and their population.
 - When I click a country card, I'm taken to a page with the country's population details.
 - On the details page I can see details about the population of the selected country, city by city.
-- **[BONUS]** On the home page I can sort the countries either by name or by population, ascending or descending.
-- **[BONUS]** On the details page I can see a chart showing how the population evolved over time (1960 - 2018).
-- **[BONUS]** When I click a city, I can see a popup with a chart showing how its population evolved over time (1960 - 2018)
-
 
 
 ## Live Demo
 
-This project is not deployed yet. It will be deployed later to **Github Pages** and **Netlify**.
+Here is the link to the live app, along with the deployment status: [See it live](https://world-population-capstone.netlify.app/) [![Netlify Status](https://api.netlify.com/api/v1/badges/2386b40a-f85d-4a43-90ff-77904d3ba148/deploy-status)](https://app.netlify.com/sites/world-population-capstone/deploys)
 
 ## Getting Started
 
@@ -53,7 +49,7 @@ To get a local copy of this project running in development mode, do the followin
 
 ## Screenshot
 
-A gif screenshot will be available soon.
+![GIF Image showcasing the features](screenshots/features-screenshot.gif)
 
 ## Built With
 

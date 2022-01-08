@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+  --primary-1: rgb(76, 45, 133);
+  --primary-2: rgb(87, 63, 133);
+  --primary-3: rgb(128, 96, 160);
+  --primary-4: rgb(160, 128, 192);
+  --text-1: rgb(255, 255, 255);
+  --text-2: rgb(228, 222, 222);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.primary-1 {
+  background-color: var(--primary-1) !important;
+}
+
+.primary-2 {
+  background-color: var(--primary-2) !important;
+}
+
+.primary-3 {
+  background-color: var(--primary-3) !important;
+}
+
+.primary-4 {
+  background-color: var(--primary-4) !important;
+}
+
+.text-1 {
+  color: var(--text-1);
+}
+
+.text-2 {
+  color: var(--text-2);
+}
+
+/* Topbar */
+.topbar {
+  padding-inline: 2em;
+  padding-block: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar .main-title {
+  font-size: 0.9em;
+  font-weight: 900;
+  color: var(--text-2);
+}
+
+.topbar .icons-right {
+  display: flex;
+  gap: 2em;
+}
+
+/* Hero */
+
+.hero {
+  padding: 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero .hero-image {
+  width: 80%;
+}
+
+.hero .hero-image img {
+  width: 70%;
+  height: auto;
+}
+
+.hero .hero-content {
+  margin-top: -1.5em;
+  margin-left: -17%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-1);
+  gap: 1em;
+}
+
+.hero-region {
+  font-size: 2em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero-pop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.3em;
+  gap: 0.3em;
+}
+
+.hero-pop .hero-actual-pop {
+  font-weight: 800;
+}
+
+.hero-pop .hero-year {
+  font-style: italic;
+}
+
+/* Display Area */
+
+.display-area {
+  margin: 0;
+}
+
+.display-header {
+  padding: 0.5em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.display-header h3 {
+  color: var(--text-2);
+  text-transform: uppercase;
+}
+
+.display-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.display-header-left div {
+  font-size: 0.8em;
+  color: var(--text-2);
+}
+
+.display-header .filter-input input {
+  padding: 8px 12px;
+  font-size: 1em;
+  color: black;
+  text-transform: uppercase;
+}
+
+.countries-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.countries-container > * {
+  flex: 1 1 50%;
+}
+
+.countries-container a {
+  text-decoration: none;
+}
+
+.countries-container a:nth-child(4n+2),
+.countries-container a:nth-child(4n+3) {
+  background-color: var(--primary-1);
+}
+
+.countries-container a:nth-child(4n),
+.countries-container a:nth-child(4n+1) {
+  background-color: var(--primary-2);
+}
+
+.country {
+  display: flex;
+  padding: 1em;
+  padding-inline: 2em;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.country-card-header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.country-card-image {
+  width: 55%;
+}
+
+.country-card-image .ccimg {
+  width: 60%;
+  height: auto;
+}
+
+.country .arrow-icon {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: var(--text-1);
+}
+
+.country-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  align-items: flex-end;
+  color: var(--text-1);
+}
+
+.country-card-name {
+  font-size: 1.6em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.country-card-pop {
+  font-size: 1.2em;
+}
+
+.country-card-year {
+  font-size: 0.8em;
+  font-weight: 100;
+}
+
+/* Cities */
+
+.cities-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.city {
+  padding: 1em;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: var(--text-1);
+  position: relative;
+}
+
+.city-card-name {
+  font-size: 0.9em;
+  font-weight: 900;
+}
+
+.city-card-details {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  justify-content: flex-start;
+  font-size: 1em;
+}
+
+.city-card-details .city-card-year {
+  font-size: 0.85em;
+  color: var(--text-2);
+  font-style: italic;
+}
+
+.city-card-details .arrow-icon {
+  position: absolute;
+  right: 20px;
+}
+
+.cities-container .city:nth-child(even) {
+  background-color: var(--primary-2);
+}
+
+.cities-container .city:nth-child(odd) {
+  background-color: var(--primary-1);
+}
