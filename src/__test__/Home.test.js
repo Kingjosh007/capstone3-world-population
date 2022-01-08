@@ -3,15 +3,15 @@ import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import store from '../redux/configureStore';
-import App from '../App';
+import Home from '../components/Home';
 
-describe('App page works fine', () => {
-  test('renders App', () => {
+describe('Home component is displayed properly', () => {
+  test('renders Home', () => {
     const tree = render(
       <Provider store={store}>
         <React.StrictMode>
           <BrowserRouter>
-            <App />
+            <Home />
           </BrowserRouter>
         </React.StrictMode>
       </Provider>,
